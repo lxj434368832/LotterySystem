@@ -1,0 +1,12 @@
+include(../configuration.pri)
+include(../CommonFile/CommonFile.pri)
+include(../ViewManage/ViewManage.pri)
+include(../ModelManage/ModelManage.pri)
+include(../LogicManage/LogicManage.pri)
+include(../Component/Component.pri)
+include(../Utility/Utility.pri)
+include($$QT_3RDPARTYPATH/MLog/MLog.pri)
+include($$QT_3RDPARTYPATH/MConfigManage/MConfigManage.pri)
+include($$QT_3RDPARTYPATH/MFramelessWidget/MFramelessWidget.pri)
+include($$QT_3RDPARTYPATH/ReadWriteExcel/ReadWriteExcel.pri)
+
