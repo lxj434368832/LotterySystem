@@ -41,7 +41,7 @@ void MainLogic::ImportData(QString qstrFilePath)
 		QString qstrNum = row.at(2).toString();
 		m_mapLotteryList[qstrPeriod] = qstrNum;
 	}
-	emit signalLotteryListChanged(&m_mapLotteryList);
+    emit signalLotteryListChanged(m_mapLotteryList);
 }
 
 void MainLogic::AddData(QString qstrPeriod, QString qstrNum)
@@ -49,10 +49,10 @@ void MainLogic::AddData(QString qstrPeriod, QString qstrNum)
 	if (qstrPeriod.isEmpty() || qstrNum.isEmpty()) return;
 
 	m_mapLotteryList[qstrPeriod] = qstrNum;
-	emit signalLotteryListChanged(&m_mapLotteryList);
+    emit signalLotteryListChanged(m_mapLotteryList);
 }
 
-const QMap<QString, QString>& MainLogic::GetLotteryList()
+const QMap<QString, QString> MainLogic::GetLotteryList()
 {
 	return m_mapLotteryList;
 }

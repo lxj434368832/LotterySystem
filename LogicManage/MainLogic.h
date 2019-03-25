@@ -28,11 +28,11 @@ public:
     *************************************************************************/
     void AddData(QString qstrPeriod, QString qstrNum);
 
-	const QMap<QString, QString>& GetLotteryList();
+    const QMap<QString, QString> GetLotteryList();
 
 
 signals:
-    void signalLotteryListChanged(QMap<QString, QString>*);
+    void signalLotteryListChanged(QMap<QString, QString>);
 
 private:
     QMap<QString, QString>        m_mapLotteryList;     //ÆÚÊý£¬¿ª½±ºÅ
