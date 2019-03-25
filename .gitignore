@@ -1,3 +1,7 @@
 /Debug/
 *.suo
 /Release/
+/x64/
+/.vs/
+*.db
+*.opendb

@@ -13,6 +13,33 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">
+/*QHeaderView 
+{
+	font: bold 12pt &quot;Microsoft YaHei&quot;;
+  	min-height:30px;
+	background-color:#dbdbdb;
+}*/
+
+QHeaderView::section {
+     background-color: qlineargradient( x1:0, y1:0, x2:0, y2:1,
+                                   stop:0 #616161, 
+                                   stop: 0.5 #505050,
+                                   stop: 0.6 #434343, stop:1 #656565);
+
+	font: bold 12pt &quot;Microsoft YaHei&quot;;
+	color:white;
+  	min-height:26px;
+    border: 1px solid #6c6c6c;
+}
+QTableWidget
+{
+    font-size:11pt &quot;Microsoft YaHei&quot;;
+    /*background-color: rgb(247,247,247);
+	gridline-color: rgb(217, 217, 217);*/
+}</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
     <number>5</number>
@@ -265,6 +292,15 @@
    </item>
    <item>
     <widget class="QTableWidget" name="twStatisticList">
+     <property name="midLineWidth">
+      <number>1</number>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>50</number>
      </attribute>

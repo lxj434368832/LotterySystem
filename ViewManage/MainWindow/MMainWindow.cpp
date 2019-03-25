@@ -2,8 +2,10 @@
 #include "ui_MMainWindow.h"
 #include "FormStatistic.h"
 #include "..\..\LogicManage\MainLogic.h"
-#include <QFileDialog>
 #include "formAddData.h"
+#include "..\..\CommonFile\CommonDefine.h"
+#include <QFileDialog>
+#include <QElapsedTimer>
 
 MMainWindow::MMainWindow(ViewMediator *mdt, QWidget *parent) :
     MFramelessWidget(parent),
@@ -11,7 +13,8 @@ MMainWindow::MMainWindow(ViewMediator *mdt, QWidget *parent) :
     ui(new Ui::MMainWindow)
 {
     ui->setupUi(this);
-    setWindowFlags(Qt::FramelessWindowHint | Qt::Window);
+//    setWindowFlags(Qt::FramelessWindowHint | Qt::Window);
+    ui->frameStatusBar->setVisible(false);
     on_btnAddStatistic_clicked();
 }
 
@@ -28,7 +31,8 @@ void MMainWindow::on_btnClose_clicked()
 void MMainWindow::on_btnImportData_clicked()
 {
     QString qstrFilePath = QFileDialog::getOpenFileName(nullptr, QString::fromLocal8Bit("请选择要导入的Excel文件"),
-                                                        "", QString::fromLocal8Bit("Excel 工作薄(*.xlsx *.xls)"));
+		"", QString::fromLocal8Bit("Excel 工作薄(*.xlsx *.xls)"));
+
 	if (qstrFilePath.isEmpty()) return;
 	if (false == QFile::exists(qstrFilePath)) return;
 	m_mainLogic->ImportData(QDir::toNativeSeparators(qstrFilePath));

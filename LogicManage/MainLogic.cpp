@@ -1,12 +1,14 @@
 #include "MainLogic.h"
 #include "../3rdParty/ReadWriteExcel/include/ReadWriteExcel.h"
 #include "../CommonFile/CommonDefine.h"
+#include <QElapsedTimer>
 
 
 MainLogic::MainLogic(IMainClient *_main) :
 	QObject(),
     ILogicInterface(_main)
 {
+	qRegisterMetaType<QMap<QString, QString>>("QMap<QString, QString>");
 }
 
 MainLogic::~MainLogic()
@@ -41,6 +43,7 @@ void MainLogic::ImportData(QString qstrFilePath)
 		QString qstrNum = row.at(2).toString();
 		m_mapLotteryList[qstrPeriod] = qstrNum;
 	}
+
     emit signalLotteryListChanged(m_mapLotteryList);
 }
 
