@@ -135,9 +135,10 @@ void FormStatistic::StatisticHeat(const QMap<QString, QString> mapLotteryList)
        ui->twStatisticList->setItem(iRow, iCol++, item);
 
        //添加开奖号
+	   QString qstrNums = iter.value();
        ui->twStatisticList->setItem(iRow,  iCol, new QTableWidgetItem);
         FormLotteryNumber   *form = new FormLotteryNumber();
-        form->SetLotteryNumbers(iter.value());
+		form->SetLotteryNumbers(qstrNums);
         ui->twStatisticList->setCellWidget(iRow, iCol++, form);
 
         //添加平均值
