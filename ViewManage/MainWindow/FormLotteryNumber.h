@@ -15,7 +15,7 @@ class FormLotteryNumber : public QWidget
 public:
     explicit FormLotteryNumber(QWidget *parent = 0);
     ~FormLotteryNumber();
-    void SetLotteryNumbers(QStringList list);
+    void SetLotteryNumbers(QString qstrNums);
 
 protected:
     virtual void paintEvent(QPaintEvent *event);

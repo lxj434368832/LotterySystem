@@ -2,6 +2,7 @@
 #include "ui_FormStatistic.h"
 #include "../../LogicManage/MainLogic.h"
 #include "../../CommonFile/CommonDefine.h"
+#include "FormLotteryNumber.h"
 #include <QButtonGroup>
 #include <QElapsedTimer>
 
@@ -128,20 +129,24 @@ void FormStatistic::StatisticHeat(const QMap<QString, QString> mapLotteryList)
    for (iter = iter + (iCount - m_iStatisticCount); iter != mapLotteryList.end(); iter++)
    {
        int iCol = 0;
+       //添加期号
 	   item = new QTableWidgetItem(iter.key());
 	   item->setTextAlignment(Qt::AlignCenter);
        ui->twStatisticList->setItem(iRow, iCol++, item);
 
-	   QString qstrNums = iter.value();
-	   item = new QTableWidgetItem(qstrNums);
-	   item->setTextAlignment(Qt::AlignCenter);
-       ui->twStatisticList->setItem(iRow,  iCol++, item);
+       //添加开奖号
+       ui->twStatisticList->setItem(iRow,  iCol, new QTableWidgetItem);
+        FormLotteryNumber   *form = new FormLotteryNumber();
+        form->SetLotteryNumbers(iter.value());
+        ui->twStatisticList->setCellWidget(iRow, iCol++, form);
 
+        //添加平均值
        dAvg = (iRow + 1) * 6.0 / 10;
        item = new QTableWidgetItem(QString::number(dAvg, 'f' ,1));
 	   item->setTextAlignment(Qt::AlignCenter);
        ui->twStatisticList->setItem(iRow,  iCol++,  item);
 
+       //添加各个数字的热度
        StatisticOneHeat(qstrNums);
 	   for (int i = 0; i < 10; i++)
 	   {

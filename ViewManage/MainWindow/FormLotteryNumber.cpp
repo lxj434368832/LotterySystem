@@ -18,9 +18,9 @@ FormLotteryNumber::~FormLotteryNumber()
     delete ui;
 }
 
-void FormLotteryNumber::SetLotteryNumbers(QStringList list)
+void FormLotteryNumber::SetLotteryNumbers(QString qstrNums)
 {
-    m_listLotteryNumbers = list;
+    m_listLotteryNumbers = qstrNums.split(',');
 }
 
 void FormLotteryNumber::paintEvent(QPaintEvent *event)
