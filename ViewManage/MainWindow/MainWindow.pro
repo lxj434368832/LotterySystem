@@ -17,17 +17,20 @@ HEADERS += \
    MMainWindow.h \
     FormStatistic.h \
     formAddData.h \
+    FormLotteryNumber.h \
     FormLotteryNumber.h
 
 SOURCES += \
     MMainWindow.cpp \
     FormStatistic.cpp \
     formAddData.cpp \
+    FormLotteryNumber.cpp \
     FormLotteryNumber.cpp
 
 FORMS += \
     MMainWindow.ui \
     FormStatistic.ui \
     formAddData.ui \
+    FormLotteryNumber.ui \
     FormLotteryNumber.ui
 

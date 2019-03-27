@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
+    <width>990</width>
     <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>彩票统计系统</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../MainClient/Resource.qrc">
+    <normaloff>:/Resource/Lottery.ico</normaloff>:/Resource/Lottery.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">#MMainWindow
@@ -124,12 +128,6 @@ QPushButton::pressed{
       </property>
       <item>
        <widget class="QLabel" name="lbTitleIcon">
-        <property name="minimumSize">
-         <size>
-          <width>230</width>
-          <height>0</height>
-         </size>
-        </property>
         <property name="text">
          <string/>
         </property>
@@ -144,7 +142,7 @@ QPushButton::pressed{
          </sizepolicy>
         </property>
         <property name="text">
-         <string>彩票统计系统</string>
+         <string>大赢家彩票统计系统</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -356,6 +354,8 @@ QPushButton::pressed{
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../MainClient/Resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

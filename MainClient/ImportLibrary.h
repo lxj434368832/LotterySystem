@@ -17,5 +17,5 @@
 #pragma comment(lib, "../3rdParty/MLog/lib/Release/MLog.lib")
 #pragma comment(lib, "../3rdParty/MConfigManage/lib/MConfigManage.lib")
 #pragma comment(lib, "../3rdParty/MFramelessWidget/lib/Release/MFramelessWidget.lib")
-#pragma comment(lib, "../3rdParty/ReadWriteExcel/lib/ReadWriteExceld.lib")
+#pragma comment(lib, "../3rdParty/ReadWriteExcel/lib/ReadWriteExcel.lib")
 #endif

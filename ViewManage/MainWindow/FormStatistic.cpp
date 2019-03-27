@@ -48,7 +48,7 @@ FormStatistic::FormStatistic(ViewMediator *mdt, QWidget *parent) :
     headers.append("10");
 	ui->twStatisticList->setColumnCount(headers.count());
 	ui->twStatisticList->setColumnWidth(0, 135);
-	ui->twStatisticList->setColumnWidth(1, 235);
+    ui->twStatisticList->setColumnWidth(1, 280);
 	ui->twStatisticList->setColumnWidth(2, 50);
     ui->twStatisticList->setHorizontalHeaderLabels(headers);
 

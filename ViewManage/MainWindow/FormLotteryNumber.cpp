@@ -37,14 +37,14 @@ void FormLotteryNumber::paintEvent(QPaintEvent *event)
 
     QPen    penText(Qt::white);
     QPen    penEllipse;
-    painter.setFont(QFont("Microsoft YaHei", 14, QFont::Bold));
+    painter.setFont(QFont("Arial", 12, QFont::Bold));   //Microsoft YaHei
 
-    int xp = m_iSpacing;
+    int xp = m_iSpacing + 2;
     for(QString qstrNum : m_listLotteryNumbers)
     {
         int iNum = qstrNum.toInt() - 1;
 
-        QRect rect(xp,1, iRadius, iRadius);
+        QRect rect(xp, 3, iRadius, iRadius);
         QColor clBg(m_listNumBgColor[iNum]);
         penEllipse.setColor(clBg);
         painter.setPen(penEllipse);
