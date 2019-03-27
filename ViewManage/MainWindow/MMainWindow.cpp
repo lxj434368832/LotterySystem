@@ -73,6 +73,7 @@ void MMainWindow::on_tabStatistic_tabBarDoubleClicked(int index)
     widget->show();
     widget->raise();
     widget->activateWindow();
+	widget->move(50, 50);
 }
 
 void MMainWindow::slotBackToTab(QWidget* widget, QString qstrTitle)

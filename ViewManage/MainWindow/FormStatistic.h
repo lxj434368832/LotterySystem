@@ -20,7 +20,7 @@ public:
     ~FormStatistic();
 
 signals:
-    signalBackToTab(QWidget*, QString qstrTitle);
+    void signalBackToTab(QWidget*, QString qstrTitle);
 
 protected:
     void closeEvent(QCloseEvent *event) override;
