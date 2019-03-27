@@ -26,6 +26,10 @@ private slots:
 
     void on_btnAddStatistic_clicked();
 
+    void on_tabStatistic_tabBarDoubleClicked(int index);
+
+    void slotBackToTab(QWidget *, QString);
+
 private:
     Ui::MMainWindow *ui;
 };

@@ -4,6 +4,7 @@
 #include "../../CommonFile/CommonDefine.h"
 #include "FormLotteryNumber.h"
 #include <QButtonGroup>
+#include <QCloseEvent>
 #include <QElapsedTimer>
 
 FormStatistic::FormStatistic(ViewMediator *mdt, QWidget *parent) :
@@ -64,6 +65,12 @@ FormStatistic::FormStatistic(ViewMediator *mdt, QWidget *parent) :
 FormStatistic::~FormStatistic()
 {
     delete ui;
+}
+
+void FormStatistic::closeEvent(QCloseEvent *event)
+{
+    emit signalBackToTab(this, windowTitle());
+    event->ignore();
 }
 
 void FormStatistic::on_sbTatisticPeriod_editingFinished()

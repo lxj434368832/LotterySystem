@@ -19,6 +19,12 @@ public:
     explicit FormStatistic(ViewMediator *mdt, QWidget *parent = nullptr);
     ~FormStatistic();
 
+signals:
+    signalBackToTab(QWidget*, QString qstrTitle);
+
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
 private slots:
     void on_sbTatisticPeriod_editingFinished();
 

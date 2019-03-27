@@ -58,7 +58,25 @@ void MMainWindow::on_btnAddStatistic_clicked()
 {
     int iItemCount = ui->tabStatistic->count();
     FormStatistic *form = new FormStatistic(m_mediator);
+    connect(form, SIGNAL(signalBackToTab(QWidget*, QString)), this, SLOT(slotBackToTab(QWidget*, QString)));
 
     ui->tabStatistic->addTab(form, QString::fromLocal8Bit("Í³¼ÆÏî%1").arg(iItemCount + 1));
     ui->tabStatistic->setCurrentIndex(iItemCount);
+}
+
+void MMainWindow::on_tabStatistic_tabBarDoubleClicked(int index)
+{
+    QWidget *widget = ui->tabStatistic->widget(index);
+    widget->setWindowTitle(ui->tabStatistic->tabText(index));
+    ui->tabStatistic->removeTab(index);
+    widget->setWindowFlags(Qt::Window);
+    widget->show();
+    widget->raise();
+    widget->activateWindow();
+}
+
+void MMainWindow::slotBackToTab(QWidget* widget, QString qstrTitle)
+{
+    widget->setWindowFlags(Qt::Widget);
+    ui->tabStatistic->addTab(widget, qstrTitle);
 }
