@@ -81,3 +81,16 @@ void MMainWindow::slotBackToTab(QWidget* widget, QString qstrTitle)
     widget->setWindowFlags(Qt::Widget);
     ui->tabStatistic->addTab(widget, qstrTitle);
 }
+
+void MMainWindow::on_btnMinimum_clicked()
+{
+    showMinimized();
+}
+
+void MMainWindow::on_btnMaximum_clicked()
+{
+    if(isMaximized())
+        showNormal();
+    else
+        showMaximized();
+}

@@ -50,7 +50,6 @@ void MainLogic::ImportData(QString qstrFilePath)
 void MainLogic::AddData(QString qstrPeriod, QString qstrNum)
 {
 	if (qstrPeriod.isEmpty() || qstrNum.isEmpty()) return;
-
 	m_mapLotteryList[qstrPeriod] = qstrNum;
     emit signalLotteryListChanged(m_mapLotteryList);
 }

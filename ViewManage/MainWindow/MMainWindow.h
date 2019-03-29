@@ -30,6 +30,10 @@ private slots:
 
     void slotBackToTab(QWidget *, QString);
 
+    void on_btnMinimum_clicked();
+
+    void on_btnMaximum_clicked();
+
 private:
     Ui::MMainWindow *ui;
 };
