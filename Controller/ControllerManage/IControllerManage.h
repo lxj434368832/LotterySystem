@@ -1,6 +1,7 @@
 #pragma once
 
 class IMainClient;
+class ModelManage;
 
 class IControllerManage
 {
@@ -11,7 +12,7 @@ public:
     virtual bool Start() = 0;
     virtual void Stop() = 0;
 
-private:
+protected:
 
     IMainClient *m_main = nullptr;
 };

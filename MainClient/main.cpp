@@ -2,12 +2,12 @@
 #include "MainClient.h"
 #include "../CommonFile/CommonDefine.h"
 #include "../3rdParty/MLog/include/MLog.h"
-#include "ImportLibrary.h"
+//#include "ImportLibrary.h"
 #include <string>
 #include <QApplication>
 #include <QTextCodec>
 
-#pragma execution_character_set("utf-8")
+//#pragma execution_character_set("utf-8")
 
 int main(int argc, char *argv[])
 {

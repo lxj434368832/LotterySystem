@@ -35,7 +35,7 @@ void MMainWindow::on_btnImportData_clicked()
 
 	if (qstrFilePath.isEmpty()) return;
 	if (false == QFile::exists(qstrFilePath)) return;
-	m_mainLogic->ImportData(QDir::toNativeSeparators(qstrFilePath));
+    emit m_mainLogic->signalImportData(QDir::toNativeSeparators(qstrFilePath));
 }
 
 void MMainWindow::on_btnAddData_clicked()
