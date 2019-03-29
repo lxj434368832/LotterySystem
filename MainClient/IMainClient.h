@@ -1,10 +1,10 @@
 #pragma once
 
 struct ClientConfig;
-class ILogicInterface;
-class IViewInterface;
-class IModelInterface;
-class ICommunication;
+class IControllerManage;
+class IViewManage;
+class IModelManage;
+class ITCPCommunication;
 class IMessage;
 
 class IMainClient
@@ -12,11 +12,11 @@ class IMainClient
 public:
 	virtual ~IMainClient(){}
 	virtual ClientConfig* GetClientConfig() = 0;
-	virtual IViewInterface* GetViewInterface() = 0;
-	virtual ILogicInterface* GetLogicInterface() = 0;
-	virtual IModelInterface* GetModelInterface() = 0;
+	virtual IViewManage* GetViewInterface() = 0;
+	virtual IControllerManage* GetLogicInterface() = 0;
+	virtual IModelManage* GetModelInterface() = 0;
 
-	virtual ICommunication* GetMainCommunication() = 0;
+	virtual ITCPCommunication* GetMainCommunication() = 0;
 	virtual IMessage*	GetMessageModule() = 0;
 
 	virtual bool Start() = 0;

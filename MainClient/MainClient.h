@@ -9,11 +9,11 @@ public:
 	MainClient();
     ~MainClient() override;
 	virtual ClientConfig* GetClientConfig() override;
-	virtual IViewInterface* GetViewInterface() override;
-	virtual ILogicInterface* GetLogicInterface() override;
-	virtual IModelInterface* GetModelInterface() override;
+	virtual IViewManage* GetViewInterface() override;
+	virtual IControllerManage* GetLogicInterface() override;
+	virtual IModelManage* GetModelInterface() override;
 
-	virtual ICommunication* GetMainCommunication() override;
+	virtual ITCPCommunication* GetMainCommunication() override;
 	virtual IMessage*	GetMessageModule() override;
 
 	bool Start() override;
@@ -24,11 +24,11 @@ private:
 
 private:
 	ClientConfig		m_clConfig;	//øÕªß∂À≈‰÷√œÓ
-	IViewInterface*		m_pView;
-	ILogicInterface*	m_pLogic;
-	IModelInterface*	m_pModel;
+	IViewManage*		m_pView;
+    IControllerManage*	m_pController;
+	IModelManage*	m_pModel;
 
-	ICommunication*		m_pCommunication;
-	IMessage*			m_pMessage;
+	ITCPCommunication*		m_pCommunication;
+    IMessage*                          m_pMessage;
 };
 

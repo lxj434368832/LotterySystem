@@ -1,8 +1,8 @@
 #include "MainClient.h"
-#include "..\ViewManage\MainView\MainView.h"
-#include "..\LogicManage\MainLogic.h"
-#include "..\ModelManage\MainModel.h"
-#include "..\Component\CommunicationModule\MainCommunication.h"
+#include "..\View\ViewManage\ViewManage.h"
+#include "..\Controller\ControllerManage\ControllerManage.h"
+#include "..\Model\ModelManage\ModelManage.h"
+#include "..\Component\TCPCommunication\TCPCommunication.h"
 //#include "..\Component\MessageModule\MessageModule.h"
 #include "../CommonFile/CommonDefine.h"
 #include "../3rdParty/MConfigManage/include/MConfigManage.h"
@@ -12,18 +12,18 @@
 
 MainClient::MainClient()
 {
-	m_pLogic = new MainLogic(this);
-	m_pModel = new MainModel(this);
-	m_pCommunication = new MainCommunication(this);
+    m_pController = new ControllerManage(this);
+    m_pModel = new ModelManage(this);
+    m_pCommunication = new TCPCommunication(this);
 	//	m_pMessage = new MessageModule(this);
 
-	m_pView = new MainView(this);
+    m_pView = new ViewManage(this);
 }
 
 MainClient::~MainClient()
 {
 	RELEASE(m_pView);
-	RELEASE(m_pLogic);
+    RELEASE(m_pController);
 	RELEASE(m_pModel);
 	RELEASE(m_pCommunication);
 //    RELEASE(m_pMessage);
@@ -34,22 +34,22 @@ ClientConfig * MainClient::GetClientConfig()
 	return &m_clConfig;
 }
 
-IViewInterface * MainClient::GetViewInterface()
+IViewManage * MainClient::GetViewInterface()
 {
 	return m_pView;
 }
 
-ILogicInterface * MainClient::GetLogicInterface()
+IControllerManage * MainClient::GetLogicInterface()
 {
-	return m_pLogic;
+    return m_pController;
 }
 
-IModelInterface * MainClient::GetModelInterface()
+IModelManage * MainClient::GetModelInterface()
 {
 	return m_pModel;
 }
 
-ICommunication * MainClient::GetMainCommunication()
+ITCPCommunication * MainClient::GetMainCommunication()
 {
 	return m_pCommunication;
 }
@@ -62,7 +62,7 @@ IMessage * MainClient::GetMessageModule()
 bool MainClient::Start()
 {
 //	if (false == ReadConfigFile()) return false;
-	if (false == m_pLogic->Start()) return false;
+    if (false == m_pController->Start()) return false;
 	if (false == m_pModel->Start()) return false;
 	if (false == m_pCommunication->Start()) return false;
 //	if (false == m_pMessage->Start()) return false;
@@ -74,7 +74,7 @@ bool MainClient::Start()
 void MainClient::Stop()
 {
 	m_pView->Stop();
-	m_pLogic->Stop();
+    m_pController->Stop();
 	m_pModel->Stop();
 	m_pCommunication->Stop();
 //	m_pMessage->Stop();

@@ -5,8 +5,8 @@ CONFIG   += ordered
 exists($$PWD/Utility/Utility.pro):SUBDIRS += Utility
 
 SUBDIRS +=  CommonFile \
-    ViewManage \
-    ModelManage \
-    LogicManage \
+    View \
+    Model \
+    Controller \
     MainClient \
     Component

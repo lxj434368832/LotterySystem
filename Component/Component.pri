@@ -1,3 +1,3 @@
 
-include(CommunicationModule/CommunicationModule.pri)
+include(TCPCommunication/TCPCommunication.pri)
 #include(MessageModule/MessageModule.pri)
