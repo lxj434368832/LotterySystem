@@ -16,12 +16,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MUtilityUI.cpp">
+    <ClCompile Include="ModelManage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MUtilityUI.h">
+    <ClInclude Include="IModelManage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelManage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

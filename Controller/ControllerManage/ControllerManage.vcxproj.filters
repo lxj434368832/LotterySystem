@@ -16,12 +16,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MUtilityUI.cpp">
+    <ClCompile Include="ControllerManage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MUtilityUI.h">
+    <QtMoc Include="ControllerManage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IControllerManage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
