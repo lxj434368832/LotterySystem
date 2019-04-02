@@ -32,6 +32,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MainClient", "MainClient\Ma
 		{87143EF0-88AE-313F-AF07-CB73CF5047E8} = {87143EF0-88AE-313F-AF07-CB73CF5047E8}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "Utility\Utility.vcxproj", "{FAD949E9-9850-3345-A0C3-8403A7330331}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -88,6 +90,14 @@ Global
 		{463DEA88-57EF-34C2-9FE8-9F116F171412}.Release|Win32.Build.0 = Release|Win32
 		{463DEA88-57EF-34C2-9FE8-9F116F171412}.Release|x64.ActiveCfg = Release|x64
 		{463DEA88-57EF-34C2-9FE8-9F116F171412}.Release|x64.Build.0 = Release|x64
+		{FAD949E9-9850-3345-A0C3-8403A7330331}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FAD949E9-9850-3345-A0C3-8403A7330331}.Debug|Win32.Build.0 = Debug|Win32
+		{FAD949E9-9850-3345-A0C3-8403A7330331}.Debug|x64.ActiveCfg = Debug|x64
+		{FAD949E9-9850-3345-A0C3-8403A7330331}.Debug|x64.Build.0 = Debug|x64
+		{FAD949E9-9850-3345-A0C3-8403A7330331}.Release|Win32.ActiveCfg = Release|Win32
+		{FAD949E9-9850-3345-A0C3-8403A7330331}.Release|Win32.Build.0 = Release|Win32
+		{FAD949E9-9850-3345-A0C3-8403A7330331}.Release|x64.ActiveCfg = Release|x64
+		{FAD949E9-9850-3345-A0C3-8403A7330331}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,7 +110,7 @@ Global
 		{56135590-E46D-3D66-A7F2-ADD87567612F} = {6DE0EA11-B7FD-4DD7-85DF-0DBB0ACD76E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		Qt5Version = msvc2015
 		SolutionGuid = {E6F7418A-99C4-4492-BBF4-FA7A5E602738}
+		Qt5Version = msvc2015
 	EndGlobalSection
 EndGlobal

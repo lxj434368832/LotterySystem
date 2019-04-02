@@ -12,9 +12,6 @@ ViewManage::ViewManage(IMainClient *_main)
 
 ViewManage::~ViewManage()
 {
-    delete m_mainWnd;
-    m_mainWnd = nullptr;
-
     delete m_viewMdt;
     m_viewMdt = nullptr;
 }
@@ -25,9 +22,12 @@ bool ViewManage::Start()
     m_mainWnd->show();
     m_mainWnd->raise();
     m_mainWnd->activateWindow();
+    m_mainWnd->move(0,0);
 	return true;
 }
 
 void ViewManage::Stop()
 {
+    delete m_mainWnd;
+    m_mainWnd = nullptr;
 }
