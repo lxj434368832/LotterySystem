@@ -15,22 +15,22 @@ CONFIG(debug, debug|release) {
 
 HEADERS += \
    MMainWindow.h \
-    FormStatistic.h \
     formAddData.h \
     FormLotteryNumber.h \
-    FormLotteryNumber.h
+    FormLotteryNumber.h \
+    FormFiveMinuteRaceStatistic.h
 
 SOURCES += \
     MMainWindow.cpp \
-    FormStatistic.cpp \
     formAddData.cpp \
     FormLotteryNumber.cpp \
-    FormLotteryNumber.cpp
+    FormLotteryNumber.cpp \
+    FormFiveMinuteRaceStatistic.cpp
 
 FORMS += \
     MMainWindow.ui \
-    FormStatistic.ui \
     formAddData.ui \
     FormLotteryNumber.ui \
-    FormLotteryNumber.ui
+    FormLotteryNumber.ui \
+    FormFiveMinuteRaceStatistic.ui
 

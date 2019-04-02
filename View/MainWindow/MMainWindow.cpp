@@ -1,6 +1,6 @@
 #include "MMainWindow.h"
 #include "ui_MMainWindow.h"
-#include "FormStatistic.h"
+#include "FormFiveMinuteRaceStatistic.h"
 #include "..\..\Controller\ControllerManage\ControllerManage.h"
 #include "formAddData.h"
 #include "..\..\CommonFile\CommonDefine.h"
@@ -35,7 +35,7 @@ void MMainWindow::on_btnImportData_clicked()
 
 	if (qstrFilePath.isEmpty()) return;
 	if (false == QFile::exists(qstrFilePath)) return;
-    emit m_mainLogic->signalImportData(QDir::toNativeSeparators(qstrFilePath));
+    emit m_mainLogic->signalImportFiveMinuteRaceData(QDir::toNativeSeparators(qstrFilePath));
 }
 
 void MMainWindow::on_btnAddData_clicked()
@@ -43,7 +43,7 @@ void MMainWindow::on_btnAddData_clicked()
 	QString qstrPeriod;
 	QString qstrNum;
 	formAddData	dlg;
-	const QMap<QString, QString> lotteryList = m_mainLogic->GetLotteryList();
+    const QMap<QString, QString> lotteryList = m_mainLogic->GetFiveMinuteRaceNumberList();
 	if (false == lotteryList.isEmpty())
 	{
 		qstrPeriod = lotteryList.lastKey();
@@ -51,13 +51,13 @@ void MMainWindow::on_btnAddData_clicked()
     dlg.SetLastPeriod(qstrPeriod);
     if(QDialog::Rejected == dlg.exec()) return;
     dlg.GetData(qstrPeriod, qstrNum);
-    m_mainLogic->AddData(qstrPeriod, qstrNum);
+    m_mainLogic->AddFiveMinuteRaceData(qstrPeriod, qstrNum);
 }
 
 void MMainWindow::on_btnAddStatistic_clicked()
 {
     int iItemCount = ui->tabStatistic->count();
-    FormStatistic *form = new FormStatistic(m_mediator);
+    FormFiveMinuteRaceStatistic *form = new FormFiveMinuteRaceStatistic(m_mediator);
     connect(form, SIGNAL(signalBackToTab(QWidget*, QString)), this, SLOT(slotBackToTab(QWidget*, QString)));
 
     ui->tabStatistic->addTab(form, QString::fromLocal8Bit("Í³¼ÆÏî%1").arg(iItemCount + 1));

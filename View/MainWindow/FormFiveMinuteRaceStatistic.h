@@ -7,17 +7,17 @@
 #include "../ViewManage/ViewColleague.h"
 
 namespace Ui {
-class FormStatistic;
+class FormFiveMinuteRaceStatistic;
 }
 
 
-class FormStatistic : public QWidget, public ViewColleague
+class FormFiveMinuteRaceStatistic : public QWidget, public ViewColleague
 {
     Q_OBJECT
 
 public:
-    explicit FormStatistic(ViewMediator *mdt, QWidget *parent = nullptr);
-    ~FormStatistic();
+    explicit FormFiveMinuteRaceStatistic(ViewMediator *mdt, QWidget *parent = nullptr);
+    ~FormFiveMinuteRaceStatistic();
 
 signals:
     void signalBackToTab(QWidget*, QString qstrTitle);
@@ -32,7 +32,7 @@ private slots:
 
     void slotGroupButtonToggled(int id, bool checked);
 
-    void slotLotteryListChanged(QMap<QString,QString>);
+    void slotFiveMinuteRaceNumberChanged(QMap<QString,QString>);
 
 private:
     void ExecuteStatistic(const QMap<QString, QString>);
@@ -43,7 +43,7 @@ private:
 	void HighlightFifthRow();
 
 private:
-    Ui::FormStatistic *ui;
+    Ui::FormFiveMinuteRaceStatistic *ui;
     int                           m_iStatisticCount;      //统计期数
     QVector<int>				  m_vctStatisticRank;     //需要统计的名次
 	int							  m_iStatisticFigure;	  //统计位数

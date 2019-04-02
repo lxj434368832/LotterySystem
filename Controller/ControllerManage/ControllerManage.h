@@ -21,7 +21,14 @@ signals:
     * param qstrFilePath: 文件路径
     * return:
     *************************************************************************/
-    void signalImportData(QString qstrFilePath);
+    void signalImportFiveMinuteRaceData(QString qstrFilePath);
+
+    /*************************************************************************
+    * function:从本地文件中导入三分快三数据
+    * param qstrFilePath: 文件路径
+    * return:
+    *************************************************************************/
+    void signalImportThreePointsQuiklyData(QString qstrFilePath);
 
 //外部调用的函数
 public:
@@ -31,16 +38,27 @@ public:
     * param qstrNum:   开奖号
     * return:
     *************************************************************************/
-    void AddData(QString qstrPeriod, QString qstrNum);
+    void AddFiveMinuteRaceData(QString qstrPeriod, QString qstrNum);
 
-    const QMap<QString, QString> GetLotteryList();
+    /*************************************************************************
+    * function:增加一行三分快三数据到列表中
+    * param qstrPeriod:期数
+    * param qstrNum:   开奖号
+    * return:
+    *************************************************************************/
+    void AddThreePointsQuiklyData(QString qstrPeriod, QString qstrNum);
+    const QMap<QString, QString> GetFiveMinuteRaceNumberList();
+
+    const QMap<QString, QString> GetThreePointsQuiklyNumberList();
 
 //通知的信号函数
 signals:
-    void signalLotteryListChanged(QMap<QString, QString>);
+    void signalFiveMinuteRaceNumberChanged(QMap<QString, QString>);
+    void signalThreePointsQuiklyNumberChanged(QMap<QString, QString>);
 
 private slots:
-    void slotImportData(QString qstrFilePath);
+    void slotImportFiveMinuteRaceData(QString qstrFilePath);
+    void slotImportThreePointsQuiklyData(QString qstrFilePath);
 
 private:
     QThread                                     m_thread;                   //异步线程

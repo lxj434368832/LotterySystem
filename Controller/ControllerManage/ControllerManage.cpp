@@ -12,7 +12,8 @@ ControllerManage::ControllerManage(IMainClient *_main) :
 {
 	qRegisterMetaType<QMap<QString, QString>>("QMap<QString, QString>");
 
-    connect(this, SIGNAL(signalImportData(QString)),this, SLOT(slotImportData(QString)));
+    connect(this, SIGNAL(signalImportFiveMinuteRaceData(QString)),this, SLOT(slotImportFiveMinuteRaceData(QString)));
+    connect(this, SIGNAL(signalImportThreePointsQuiklyData(QString)),this, SLOT(slotImportThreePointsQuiklyData(QString)));
     moveToThread(&m_thread);
     m_thread.start();
 }
@@ -40,28 +41,52 @@ void ControllerManage::Stop()
     m_model = nullptr;
 }
 
-void ControllerManage::slotImportData(QString qstrFilePath)
+void ControllerManage::slotImportFiveMinuteRaceData(QString qstrFilePath)
 {
     ReadWriteExcel rdExcel;
     if(nullptr == m_model)  return;
 	rdExcel.OpenExcel(qstrFilePath);
-   m_model->SaveLotteryNumberList( rdExcel.ReadAllData());
+   m_model->SaveFiveMinuteRaceNumberList( rdExcel.ReadAllData());
 
-    emit signalLotteryListChanged(m_model->GetLotteryList());
+   emit signalFiveMinuteRaceNumberChanged(m_model->GetFiveMinuteRaceNumberList());
 }
 
-void ControllerManage::AddData(QString qstrPeriod, QString qstrNum)
+void ControllerManage::slotImportThreePointsQuiklyData(QString qstrFilePath)
+{
+    ReadWriteExcel rdExcel;
+    if(nullptr == m_model)  return;
+    rdExcel.OpenExcel(qstrFilePath);
+   m_model->SaveThreePointsQuiklyNumberList(rdExcel.ReadAllData());
+}
+
+void ControllerManage::AddFiveMinuteRaceData(QString qstrPeriod, QString qstrNum)
 {
      if(nullptr == m_model)  return;
-    m_model->AddLotteryNumberData(qstrPeriod, qstrNum);
+     m_model->AddFiveMinuteRaceNumberData(qstrPeriod, qstrNum);
 }
 
-const QMap<QString, QString> ControllerManage::GetLotteryList()
+void ControllerManage::AddThreePointsQuiklyData(QString qstrPeriod, QString qstrNum)
+{
+    if(nullptr == m_model)  return;
+    m_model->AddThreePointsQuiklyNumberData(qstrPeriod, qstrNum);
+}
+
+const QMap<QString, QString> ControllerManage::GetFiveMinuteRaceNumberList()
 {
      if(nullptr == m_model)
      {
          QMap<QString, QString> map;
          return map;
      }
-    return m_model->GetLotteryList();
+     return m_model->GetFiveMinuteRaceNumberList();
+}
+
+const QMap<QString, QString> ControllerManage::GetThreePointsQuiklyNumberList()
+{
+    if(nullptr == m_model)
+    {
+        QMap<QString, QString> map;
+        return map;
+    }
+    return m_model->GetThreePointsQuiklyNumberList();
 }
