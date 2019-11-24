@@ -24,7 +24,7 @@ private:
     Ui::FormLotteryNumber *ui;
 
     QVector<QString>     m_listNumBgColor;
-    int                                 m_iSpacing;
+    int                          m_iSpacing;
     QStringList                  m_listLotteryNumbers;
 };
 

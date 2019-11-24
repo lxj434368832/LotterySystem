@@ -5,9 +5,9 @@
 //#pragma comment(lib, "../../Framework/lib/Log/Debug/Log.lib")
 //#pragma comment(lib, "../../Debug/IOCPCommunication.lib")
 
-#pragma comment(lib, "../3rdParty/MLog/lib/Debug/MLogd.lib")
+#pragma comment(lib, "../3rdParty/MLog/lib/MLogd.lib")
 #pragma comment(lib, "../3rdParty/MConfigManage/lib/MConfigManaged.lib")
-#pragma comment(lib, "../3rdParty/MFramelessWidget/lib/Debug/MFramelessWidgetd.lib")
+#pragma comment(lib, "../3rdParty/MFramelessWidget/lib/MFramelessWidgetd.lib")
 #pragma comment(lib, "../3rdParty/ReadWriteExcel/lib/ReadWriteExceld.lib")
 
 #else

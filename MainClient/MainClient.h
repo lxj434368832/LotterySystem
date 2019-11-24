@@ -13,8 +13,8 @@ public:
 	virtual IControllerManage* GetLogicInterface() override;
 	virtual IModelManage* GetModelInterface() override;
 
-	virtual ITCPCommunication* GetMainCommunication() override;
-	virtual IMessage*	GetMessageModule() override;
+//	virtual ITCPCommunication* GetMainCommunication() override;
+//	virtual IMessage*	GetMessageModule() override;
 
 	bool Start() override;
 	void Stop() override;
@@ -28,7 +28,7 @@ private:
     IControllerManage*	m_pController;
 	IModelManage*	m_pModel;
 
-	ITCPCommunication*		m_pCommunication;
-    IMessage*                          m_pMessage;
+//	ITCPCommunication*		m_pCommunication;
+//    IMessage*                          m_pMessage;
 };
 

@@ -31,7 +31,7 @@ int ModelManage::SaveFiveMinuteRaceNumberList(QList<QList<QVariant> > rows)
     }
     rows.pop_front();		//去掉标题栏
 
-    if(10 != rows[0].at(2).toString().split(','))
+    if(10 != rows[0].at(2).toString().split(',').size())
     {
         loge()<<QString::fromLocal8Bit("读取五分赛车号码错误，号码个数不为10!");
         return 0;
@@ -79,7 +79,7 @@ int ModelManage::SaveThreePointsQuiklyNumberList(QList<QList<QVariant> > rows)
     }
     rows.pop_front();		//去掉标题栏
 
-    if(3 != rows[0].at(2).toString().split(','))
+    if(3 != rows[0].at(2).toString().split(',').size())
     {
         loge()<<QString::fromLocal8Bit("读取三分快三号码错误，号码个数不为10!");
         return 0;
@@ -114,6 +114,6 @@ void ModelManage::AddThreePointsQuiklyNumberData(QString qstrPeriod, QString qst
 }
 
 const QMap<QString, QString> ModelManage::GetThreePointsQuiklyNumberList()
-{\
+{
     return m_mapThreePointsQuiklyNumberList;
 }

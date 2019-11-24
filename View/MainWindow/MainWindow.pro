@@ -18,19 +18,22 @@ HEADERS += \
     formAddData.h \
     FormLotteryNumber.h \
     FormLotteryNumber.h \
-    FormFiveMinuteRaceStatistic.h
+    FormFiveMinuteRaceStatistic.h \
+    FormThreePointsQuikly.h
 
 SOURCES += \
     MMainWindow.cpp \
     formAddData.cpp \
     FormLotteryNumber.cpp \
     FormLotteryNumber.cpp \
-    FormFiveMinuteRaceStatistic.cpp
+    FormFiveMinuteRaceStatistic.cpp \
+    FormThreePointsQuikly.cpp
 
 FORMS += \
     MMainWindow.ui \
     formAddData.ui \
     FormLotteryNumber.ui \
     FormLotteryNumber.ui \
-    FormFiveMinuteRaceStatistic.ui
+    FormFiveMinuteRaceStatistic.ui \
+    FormThreePointsQuikly.ui
 

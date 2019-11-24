@@ -12,8 +12,8 @@ exists( $${LIBRARY_PATH} ) {
 
     INCLUDEPATH += $${LIBRARY_HEADERS}
 
-    CONFIG(debug, debug|release): LIBS += -L$${LIBRARY_LIBS}/Debug/ -lReadWriteExceld
-    CONFIG(release, debug|release): LIBS += -L$${LIBRARY_LIBS}/Release/ -lReadWriteExcel
+    CONFIG(debug, debug|release): LIBS += -L$${LIBRARY_LIBS}/ -lReadWriteExceld
+    CONFIG(release, debug|release): LIBS += -L$${LIBRARY_LIBS}/ -lReadWriteExcel
 
 #    LIBRARY_install.files += $$LIBRARY_PATH/bin/*
 #    LIBRARY_install.path = $${IDE_APP_PATH}/

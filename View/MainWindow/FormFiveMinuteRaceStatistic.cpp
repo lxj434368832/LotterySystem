@@ -57,7 +57,19 @@ FormFiveMinuteRaceStatistic::FormFiveMinuteRaceStatistic(ViewMediator *mdt, QWid
         this, SLOT(slotFiveMinuteRaceNumberChanged(QMap<QString, QString>)));
 
     m_iStatisticCount = ui->sbTatisticPeriod->value();
-    m_vctStatisticRank = {0,0,1,1,1,1,1,1,0,0};
+
+    m_vctStatisticRank.resize(10);
+    m_vctStatisticRank[0] = 0;
+    m_vctStatisticRank[1] = 0;
+    m_vctStatisticRank[2] = 1;
+    m_vctStatisticRank[3] = 1;
+    m_vctStatisticRank[4] = 1;
+    m_vctStatisticRank[5] = 1;
+    m_vctStatisticRank[6] = 1;
+    m_vctStatisticRank[7] = 1;
+    m_vctStatisticRank[8] = 0;
+    m_vctStatisticRank[9] = 0;
+
 	m_iStatisticFigure = 6;
     ExecuteStatistic(m_mainLogic->GetFiveMinuteRaceNumberList());
 }
@@ -149,7 +161,7 @@ void FormFiveMinuteRaceStatistic::StatisticHeat(const QMap<QString, QString> map
         ui->twStatisticList->setCellWidget(iRow, iCol++, form);
 
         //添加平均值
-       dAvg = (iRow + 1) * 6.0 / 10;
+       dAvg = (iRow + 1) * m_iStatisticFigure / 10.0;
        item = new QTableWidgetItem(QString::number(dAvg, 'f' ,1));
 	   item->setTextAlignment(Qt::AlignCenter);
        ui->twStatisticList->setItem(iRow,  iCol++,  item);

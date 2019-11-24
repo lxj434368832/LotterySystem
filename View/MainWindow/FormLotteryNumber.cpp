@@ -9,8 +9,16 @@ FormLotteryNumber::FormLotteryNumber(QWidget *parent) :
     ui->setupUi(this);
 
     m_iSpacing = 3;
-    m_listNumBgColor = {"#e6de01","#0092e1","#4b4b4b","#fe7501", "#17e1e1",
-                   "#5333ff","#bfbfbf","#ff2600","#780a01","#07be01"};
+    m_listNumBgColor[0] = "#e6de01";
+    m_listNumBgColor[1] = "#0092e1";
+    m_listNumBgColor[2] = "#4b4b4b";
+    m_listNumBgColor[3] = "#fe7501";
+    m_listNumBgColor[4] = "#17e1e1";
+    m_listNumBgColor[5] = "#5333ff";
+    m_listNumBgColor[6] = "#bfbfbf";
+    m_listNumBgColor[7] = "#ff2600";
+    m_listNumBgColor[8] = "#780a01";
+    m_listNumBgColor[9] = "#07be01";
 }
 
 FormLotteryNumber::~FormLotteryNumber()
