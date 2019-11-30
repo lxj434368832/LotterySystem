@@ -1,5 +1,4 @@
-#ifndef MMAINWINDOW_H
-#define MMAINWINDOW_H
+#pragma once
 
 #include <QWidget>
 #include"../../3rdParty/MFramelessWidget/include/MFramelessWidget.h"
@@ -22,8 +21,6 @@ private slots:
 
     void on_btnImportData_clicked();
 
-    void on_btnAddData_clicked();
-
     void on_btnAddStatistic_clicked();
 
     void on_tabStatistic_tabBarDoubleClicked(int index);
@@ -34,8 +31,9 @@ private slots:
 
     void on_btnMaximum_clicked();
 
+    void on_leLotteryNum_returnPressed();
+
 private:
     Ui::MMainWindow *ui;
 };
 
-#endif // MMAINWINDOW_H

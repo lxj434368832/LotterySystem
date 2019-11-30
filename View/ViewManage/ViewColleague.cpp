@@ -6,7 +6,7 @@
 ViewColleague::ViewColleague(ViewMediator* mdt){
     m_mediator = mdt;
     m_mainClient = mdt->GetMainClient();
-	m_mainLogic = dynamic_cast<ControllerManage*>(m_mainClient->GetLogicInterface());
+	m_mainLogic = dynamic_cast<ControllerManage*>(m_mainClient->GetControllerManage());
 }
 
 ViewColleague::~ViewColleague()

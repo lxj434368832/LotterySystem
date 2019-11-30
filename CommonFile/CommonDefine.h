@@ -2,11 +2,11 @@
 
 #include <QtDebug>
 
-#define logd    qDebug
-#define logm   qInfo
-#define logw   qWarning
-#define loge    qCritical
-#define logf     qFatal
+#define logm   qInfo().noquote
+#define logd    qDebug().noquote
+#define logw   qWarning().noquote
+#define loge    qCritical().noquote
+#define logf     qFatal().noquote
 
 #ifndef LOGS
 #define LOGS

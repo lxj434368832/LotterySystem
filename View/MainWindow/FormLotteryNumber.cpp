@@ -9,6 +9,7 @@ FormLotteryNumber::FormLotteryNumber(QWidget *parent) :
     ui->setupUi(this);
 
     m_iSpacing = 3;
+	m_listNumBgColor.resize(10);
     m_listNumBgColor[0] = "#e6de01";
     m_listNumBgColor[1] = "#0092e1";
     m_listNumBgColor[2] = "#4b4b4b";
@@ -28,14 +29,14 @@ FormLotteryNumber::~FormLotteryNumber()
 
 void FormLotteryNumber::SetLotteryNumbers(QString qstrNums)
 {
-    m_listLotteryNumbers = qstrNums.split(',');
+	m_strLotteryNums = qstrNums;
 }
 
 void FormLotteryNumber::paintEvent(QPaintEvent *event)
 {
     int iwidth = this->width();
     int iheight = this->height();
-    int iCount = m_listLotteryNumbers.count();
+	int iCount = m_strLotteryNums.count();
     iwidth = iwidth / iCount ;
     int iRadius = qMin(iwidth, iheight) - m_iSpacing;
 
@@ -48,9 +49,9 @@ void FormLotteryNumber::paintEvent(QPaintEvent *event)
     painter.setFont(QFont("Arial", 12, QFont::Bold));   //Microsoft YaHei
 
     int xp = m_iSpacing + 2;
-    for(QString qstrNum : m_listLotteryNumbers)
+    for(QChar ch : m_strLotteryNums)
     {
-        int iNum = qstrNum.toInt() - 1;
+		int iNum = ch.digitValue();
 
         QRect rect(xp, 3, iRadius, iRadius);
         QColor clBg(m_listNumBgColor[iNum]);
@@ -59,9 +60,8 @@ void FormLotteryNumber::paintEvent(QPaintEvent *event)
         painter.setBrush(QBrush(clBg));
         painter.drawEllipse(rect);
 
-        if(iNum < 9)  qstrNum.push_front('0');
         painter.setPen(penText);
-        painter.drawText(rect, Qt::AlignCenter, qstrNum);
+        painter.drawText(rect, Qt::AlignCenter, QString::number(iNum));
         xp += iRadius + m_iSpacing;
     }
 }

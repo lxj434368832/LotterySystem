@@ -1,5 +1,4 @@
-#ifndef FORMSTATISTIC_H
-#define FORMSTATISTIC_H
+#pragma once
 
 #include <QWidget>
 #include <QVector>
@@ -51,4 +50,3 @@ private:
 
 };
 
-#endif // FORMSTATISTIC_H

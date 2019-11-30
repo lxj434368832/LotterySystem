@@ -10,3 +10,13 @@ enum EServerType
 	EST_DATA_SERVER,
 	EST_SERVER_COUNT = 1000
 };
+
+//显示消息类型
+enum EShowMsgType
+{
+    ESMT_UNKNOWN,
+    ESMT_INFORMATION,   //信息
+    ESMT_WARNING,           //告警
+    ESMT_CRITICAL,           //严重
+    ESMT_QUESTION          //问询
+};

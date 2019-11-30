@@ -34,17 +34,17 @@ ClientConfig * MainClient::GetClientConfig()
 	return &m_clConfig;
 }
 
-IViewManage * MainClient::GetViewInterface()
+IViewManage * MainClient::GetViewManage()
 {
 	return m_pView;
 }
 
-IControllerManage * MainClient::GetLogicInterface()
+IControllerManage * MainClient::GetControllerManage()
 {
     return m_pController;
 }
 
-IModelManage * MainClient::GetModelInterface()
+IModelManage * MainClient::GetModelManage()
 {
 	return m_pModel;
 }

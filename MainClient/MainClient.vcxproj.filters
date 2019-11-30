@@ -40,27 +40,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resource\CloseIcon.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Resource\MaximumIcon.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Resource\MinimumIcon.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Resource\NormalIcon.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Resource\StatusBarBgIcon.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Resource\TitleBarBgIcon.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Resource\TitleIcon.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="Lottery.ico">
       <Filter>Resource Files</Filter>
     </Image>

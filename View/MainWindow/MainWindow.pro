@@ -19,7 +19,8 @@ HEADERS += \
     FormLotteryNumber.h \
     FormLotteryNumber.h \
     FormFiveMinuteRaceStatistic.h \
-    FormThreePointsQuikly.h
+    FormWxLotteryStatistic.h \
+    FormImportWxLotteryData.h
 
 SOURCES += \
     MMainWindow.cpp \
@@ -27,7 +28,8 @@ SOURCES += \
     FormLotteryNumber.cpp \
     FormLotteryNumber.cpp \
     FormFiveMinuteRaceStatistic.cpp \
-    FormThreePointsQuikly.cpp
+    FormWxLotteryStatistic.cpp \
+    FormImportWxLotteryData.cpp
 
 FORMS += \
     MMainWindow.ui \
@@ -35,5 +37,6 @@ FORMS += \
     FormLotteryNumber.ui \
     FormLotteryNumber.ui \
     FormFiveMinuteRaceStatistic.ui \
-    FormThreePointsQuikly.ui
+    FormWxLotteryStatistic.ui \
+    FormImportWxLotteryData.ui
 

@@ -117,3 +117,19 @@ const QMap<QString, QString> ModelManage::GetThreePointsQuiklyNumberList()
 {
     return m_mapThreePointsQuiklyNumberList;
 }
+
+void ModelManage::SaveWxNumStatisticData(QStringList list)
+{
+    m_listWxNumList = list;
+}
+
+QStringList ModelManage::AddWxNumberData(QString strNum)
+{
+    m_listWxNumList.append(strNum);
+    return m_listWxNumList;
+}
+
+QStringList ModelManage::GetWxNumberList()
+{
+    return m_listWxNumList;
+}

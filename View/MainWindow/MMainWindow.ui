@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1005</width>
-    <height>1055</height>
+    <width>832</width>
+    <height>1045</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -148,7 +148,7 @@ QPushButton::pressed{
          </sizepolicy>
         </property>
         <property name="text">
-         <string>大赢家彩票统计系统</string>
+         <string>微信彩票统计系统</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -230,9 +230,8 @@ QPushButton::pressed{
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">#cbStatisticType
-{
-	font:14pt Mirosoft Yahei;
+      <string notr="true">*{
+	font: 14pt &quot;Microsoft YaHei UI&quot;;
 }</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -246,67 +245,46 @@ QPushButton::pressed{
        <number>5</number>
       </property>
       <item>
-       <widget class="QLabel" name="lbStatisticType">
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
+       <widget class="QLabel" name="label">
         <property name="text">
-         <string>统计类型:</string>
-        </property>
-        <property name="buddy">
-         <cstring>cbStatisticType</cstring>
+         <string>当前开奖号:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="cbStatisticType">
-        <item>
-         <property name="text">
-          <string>5分赛车</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>3分快3</string>
-         </property>
-        </item>
+       <widget class="QLineEdit" name="leLotteryNum">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>95</width>
+          <height>0</height>
+         </size>
+        </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btnImportData">
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
         <property name="text">
          <string>导入数据</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btnAddData">
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
+       <widget class="QPushButton" name="btnAddStatistic">
         <property name="text">
-         <string>增加数据</string>
+         <string>增加统计项</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btnAddStatistic">
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
+       <widget class="QPushButton" name="btnExportData">
         <property name="text">
-         <string>增加统计项</string>
+         <string>导出数据</string>
         </property>
        </widget>
       </item>

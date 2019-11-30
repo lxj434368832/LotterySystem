@@ -9,9 +9,9 @@ public:
 	MainClient();
     ~MainClient() override;
 	virtual ClientConfig* GetClientConfig() override;
-	virtual IViewManage* GetViewInterface() override;
-	virtual IControllerManage* GetLogicInterface() override;
-	virtual IModelManage* GetModelInterface() override;
+	virtual IViewManage* GetViewManage() override;
+	virtual IControllerManage* GetControllerManage() override;
+	virtual IModelManage* GetModelManage() override;
 
 //	virtual ITCPCommunication* GetMainCommunication() override;
 //	virtual IMessage*	GetMessageModule() override;

@@ -23,9 +23,15 @@ public:
 
     const QMap<QString, QString> GetThreePointsQuiklyNumberList();
 
+    void SaveWxNumStatisticData(QStringList list);
+    QStringList AddWxNumberData(QString strNum);
+    QStringList GetWxNumberList();
+
 private:
 
     QMap<QString, QString>        m_mapFiveMinuteRaceNumberList;     //期数，开奖号
     QMap<QString, QString>        m_mapThreePointsQuiklyNumberList;   //期数，开奖号
+
+    QStringList                   m_listWxNumList;
 };
 

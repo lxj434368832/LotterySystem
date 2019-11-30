@@ -4,8 +4,10 @@
 #include "..\..\Controller\ControllerManage\ControllerManage.h"
 #include "formAddData.h"
 #include "..\..\CommonFile\CommonDefine.h"
+#include "FormImportWxLotteryData.h"
 #include <QFileDialog>
 #include <QElapsedTimer>
+#include "FormWxLotteryStatistic.h"
 
 MMainWindow::MMainWindow(ViewMediator *mdt, QWidget *parent) :
     MFramelessWidget(parent),
@@ -28,36 +30,34 @@ void MMainWindow::on_btnClose_clicked()
     close();
 }
 
+void MMainWindow::on_leLotteryNum_returnPressed()
+{
+    QString qstrNum = ui->leLotteryNum->text();
+    m_mainLogic->AddWxNumberData(qstrNum);
+    ui->leLotteryNum->clear();
+}
+
 void MMainWindow::on_btnImportData_clicked()
 {
-    QString qstrFilePath = QFileDialog::getOpenFileName(nullptr, QString::fromLocal8Bit("请选择要导入的Excel文件"),
+    /*QString qstrFilePath = QFileDialog::getOpenFileName(nullptr, QString::fromLocal8Bit("请选择要导入的Excel文件"),
 		"", QString::fromLocal8Bit("Excel 工作薄(*.xlsx *.xls)"));
 
 	if (qstrFilePath.isEmpty()) return;
 	if (false == QFile::exists(qstrFilePath)) return;
-    emit m_mainLogic->signalImportFiveMinuteRaceData(QDir::toNativeSeparators(qstrFilePath));
-}
+    emit m_mainLogic->signalImportFiveMinuteRaceData(QDir::toNativeSeparators(qstrFilePath));*/
+    FormImportWxLotteryData form(this);
+    if(QDialog::Accepted == form.exec())
+    {
+        QString strText = form.GetLotteryNum();
+        m_mainLogic->AddWxStatisticData(strText);
+    }
 
-void MMainWindow::on_btnAddData_clicked()
-{
-	QString qstrPeriod;
-	QString qstrNum;
-	formAddData	dlg;
-    const QMap<QString, QString> lotteryList = m_mainLogic->GetFiveMinuteRaceNumberList();
-	if (false == lotteryList.isEmpty())
-	{
-		qstrPeriod = lotteryList.lastKey();
-	}
-    dlg.SetLastPeriod(qstrPeriod);
-    if(QDialog::Rejected == dlg.exec()) return;
-    dlg.GetData(qstrPeriod, qstrNum);
-    m_mainLogic->AddFiveMinuteRaceData(qstrPeriod, qstrNum);
 }
 
 void MMainWindow::on_btnAddStatistic_clicked()
 {
     int iItemCount = ui->tabStatistic->count();
-    FormFiveMinuteRaceStatistic *form = new FormFiveMinuteRaceStatistic(m_mediator);
+	FormWxLotteryStatistic *form = new FormWxLotteryStatistic(m_mediator);
     connect(form, SIGNAL(signalBackToTab(QWidget*, QString)), this, SLOT(slotBackToTab(QWidget*, QString)));
 
     ui->tabStatistic->addTab(form, QString::fromLocal8Bit("统计项%1").arg(iItemCount + 1));

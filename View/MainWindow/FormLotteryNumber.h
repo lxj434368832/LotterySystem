@@ -1,5 +1,4 @@
-#ifndef FORMLOTTERYNUMBER_H
-#define FORMLOTTERYNUMBER_H
+#pragma once
 
 #include <QWidget>
 #include <QVector>
@@ -24,8 +23,7 @@ private:
     Ui::FormLotteryNumber *ui;
 
     QVector<QString>     m_listNumBgColor;
-    int                          m_iSpacing;
-    QStringList                  m_listLotteryNumbers;
+    int                  m_iSpacing;
+	QString				 m_strLotteryNums;
 };
 
-#endif // FORMLOTTERYNUMBER_H
